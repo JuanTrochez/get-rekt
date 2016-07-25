@@ -168,11 +168,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContributeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Dao\FactoryDao.cs" />
-    <Compile Include="Dao\video\IVideoDao.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Dao\category\CategoryDao.cs" />
+    <Compile Include="Dao\category\CategoryDaoDb.cs" />
+    <Compile Include="Dao\category\ICategoryDao.cs" />
     <Compile Include="Dao\Context.cs" />
+    <Compile Include="Dao\FactoryDao.cs" />
+    <Compile Include="Dao\Picture\IPictureDao.cs" />
+    <Compile Include="Dao\Picture\PictureDao.cs" />
+    <Compile Include="Dao\Picture\PictureDaoDb.cs" />
+    <Compile Include="Dao\Rekt\IRektDao.cs" />
+    <Compile Include="Dao\Rekt\RektDao.cs" />
+    <Compile Include="Dao\Rekt\RektDaoDb.cs" />
+    <Compile Include="Dao\user\IUserDao.cs" />
+    <Compile Include="Dao\user\UserDao.cs" />
+    <Compile Include="Dao\user\UserDaoDb.cs" />
+    <Compile Include="Dao\video\IVideoDao.cs" />
     <Compile Include="Dao\video\VideoDao.cs" />
     <Compile Include="Dao\video\VideoDaoDb.cs" />
     <Compile Include="Global.asax.cs">
@@ -247,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Contribute\" />
+    <Folder Include="Views\Video\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

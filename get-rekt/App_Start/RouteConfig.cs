@@ -13,10 +13,40 @@ namespace get_rekt
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Home
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            //Video 
+            routes.MapRoute(
+                name: "WatchVideo",
+                url: "video/{id}",
+                defaults: new { controller = "Video", action = "Watch", id = UrlParameter.Optional },
+                constraints: new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
+                name: "CheckVideo",
+                url: "video/liste-attente",
+                defaults: new { controller = "Video", action = "WaitList" }
+            );
+            
+            //Category 
+            routes.MapRoute(
+                name: "Category",
+                url: "video/{categoryId}",
+                defaults: new { controller = "Category", action = "Index", categoryId = UrlParameter.Optional },
+                constraints: new { categoryId = @"\d+" }
+            );
+
+            //Contribute
+            routes.MapRoute(
+                name: "Contribute",
+                url: "participe",
+                defaults: new { controller = "Contribute", action = "Index" }
             );
         }
     }
