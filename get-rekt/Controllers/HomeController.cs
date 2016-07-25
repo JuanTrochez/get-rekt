@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using get_rekt.Dao;
+using get_rekt.Dao.video;
+using get_rekt.Models;
 
 namespace get_rekt.Controllers
 {
@@ -10,7 +13,10 @@ namespace get_rekt.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            IVideoDao dao = FactoryDao.GetVideoDao();
+            List<VideoModel> model = dao.getAllVideoByPublication(1);
+            return View("indexTest", model);
         }
 
         public ActionResult About()

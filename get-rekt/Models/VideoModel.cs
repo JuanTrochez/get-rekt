@@ -14,7 +14,7 @@ namespace get_rekt.Models
         private int id;
         private String title;
         private String description;
-        private bool published;
+        private int published;
         private String videoLink;
         private DateTime date;
         private int userId;
@@ -65,7 +65,7 @@ namespace get_rekt.Models
         }
 
         [Column("published")]
-        public bool Published
+        public int Published
         {
             get
             {

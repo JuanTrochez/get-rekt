@@ -8,7 +8,7 @@ using get_rekt.Models;
 
 namespace get_rekt.Dao.user
 {
-    interface IUserDao
+    public interface IUserDao
     {
         UserModel getUser(String email);
     }

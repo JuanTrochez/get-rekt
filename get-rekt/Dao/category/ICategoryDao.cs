@@ -8,7 +8,7 @@ using get_rekt.Models;
 
 namespace get_rekt.Dao.category
 {
-    interface ICategoryDao
+    public interface ICategoryDao
     {
         CategoryModel getCategory(int id);
     }

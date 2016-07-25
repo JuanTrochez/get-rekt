@@ -8,7 +8,7 @@ using get_rekt.Models;
 
 namespace get_rekt.Dao.Rekt
 {
-    interface IRektDao
+    public interface IRektDao
     {
         RektModel getRekt(int videoId);
     }

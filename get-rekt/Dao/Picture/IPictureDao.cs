@@ -8,7 +8,7 @@ using get_rekt.Models;
 
 namespace get_rekt.Dao.Picture
 {
-    interface IPictureDao
+    public interface IPictureDao
     {
         PictureModel getPicture(int id);
     }

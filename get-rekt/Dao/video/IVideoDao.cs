@@ -8,8 +8,9 @@ using get_rekt.Models;
 
 namespace get_rekt.Dao.video
 {
-    interface IVideoDao
+    public interface IVideoDao
     {
         VideoModel getVideo(int id);
+        List<VideoModel> getAllVideoByPublication(int published);
     }
 }
