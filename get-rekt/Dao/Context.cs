@@ -16,5 +16,13 @@ namespace get_rekt.Dao.video
         }
 
         public DbSet<VideoModel> Videos { get; set; }
+
+        public DbSet<RektModel> Rekts { get; set; }
+
+        public DbSet<UserModel> Users { get; set; }
+
+        public DbSet<CategoryModel> Categories { get; set; }
+
+        public DbSet<PictureModel> Pictures { get; set; }
     }
 }
