@@ -10,7 +10,7 @@ namespace get_rekt.Dao
 {
     public class Context: DbContext
     {
-        public Context(): base("")
+        public Context(): base("getRekt")
         {
 
         }

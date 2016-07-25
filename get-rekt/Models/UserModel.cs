@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace get_rekt.Models
 {
+    [Table("User")]
     public class UserModel
     {
         private int id;
@@ -13,6 +17,8 @@ namespace get_rekt.Models
         private String email;
         private int role;
 
+        [Key]
+        [Column("id")]
         public int Id
         {
             get
@@ -26,6 +32,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("username")]
         public string Username
         {
             get
@@ -39,6 +46,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("password")]
         public string Password
         {
             get
@@ -52,6 +60,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("role")]
         public int Role
         {
             get
@@ -65,6 +74,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("email")]
         public string Email
         {
             get

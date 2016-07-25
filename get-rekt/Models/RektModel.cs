@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace get_rekt.Models
 {
+    [Table("Rekt")]
     public class RektModel
     {
         private int id;
@@ -13,6 +17,8 @@ namespace get_rekt.Models
         private bool notRekt;
         private String ip;
 
+        [Key]
+        [Column("id")]
         public int Id
         {
             get
@@ -26,6 +32,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("video_id")]
         public int VideoId
         {
             get
@@ -39,6 +46,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("rekt")]
         public bool Rekt
         {
             get
@@ -52,6 +60,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("not_rekt")]
         public bool NotRekt
         {
             get
@@ -65,6 +74,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("ip")]
         public string Ip
         {
             get

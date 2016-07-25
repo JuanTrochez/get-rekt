@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace get_rekt.Models
 {
+    [Table("Video")]
     public class VideoModel
     {
         private int id;
@@ -20,6 +21,8 @@ namespace get_rekt.Models
         private int categoryId;
         private int pictureId;
 
+        [Key]
+        [Column("id")]
         public int Id
         {
             get
@@ -33,6 +36,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("title")]
         public string Title
         {
             get
@@ -46,6 +50,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("description")]
         public string Description
         {
             get
@@ -59,6 +64,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("published")]
         public bool Published
         {
             get
@@ -72,6 +78,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("video_link")]
         public string VideoLink
         {
             get
@@ -85,6 +92,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("date")]
         public DateTime Date
         {
             get
@@ -98,6 +106,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("user_id")]
         public int UserId
         {
             get
@@ -111,6 +120,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("category_id")]
         public int CategoryId
         {
             get
@@ -124,6 +134,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("picture_id")]
         public int PictureId
         {
             get

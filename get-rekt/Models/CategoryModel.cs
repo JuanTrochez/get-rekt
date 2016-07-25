@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace get_rekt.Models
 {
+    [Table("Category")]
     public class CategoryModel
     {
         private int id;
         private String name;
 
+        [Key]
+        [Column("id")]
         public int Id
         {
             get
@@ -23,6 +29,7 @@ namespace get_rekt.Models
             }
         }
 
+        [Column("name")]
         public string Name
         {
             get
