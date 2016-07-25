@@ -6,7 +6,7 @@ using System.Web;
 using System.Data.Entity;
 using get_rekt.Models;
 
-namespace get_rekt.Dao.video
+namespace get_rekt.Dao
 {
     public class Context: DbContext
     {
