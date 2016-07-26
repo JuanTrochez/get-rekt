@@ -15,7 +15,7 @@ namespace get_rekt.Models
         private String link;
 
         [Key]
-        [Column("id")]
+        [Column("Id")]
         public int Id
         {
             get

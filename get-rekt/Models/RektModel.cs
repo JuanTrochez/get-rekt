@@ -12,7 +12,8 @@ namespace get_rekt.Models
     public class RektModel
     {
         private int id;
-        private VideoModel videoId;
+        private int video_id;
+        private VideoModel video;
         private bool rekt;
         private bool notRekt;
         private String ip;
@@ -32,17 +33,30 @@ namespace get_rekt.Models
             }
         }
 
-        [ForeignKey("video_id")]
-        public VideoModel VideoId
+        [ForeignKey("Video")]
+        public int Video_id
         {
             get
             {
-                return videoId;
+                return video_id;
             }
 
             set
             {
-                videoId = value;
+                video_id = value;
+            }
+        }
+
+        public VideoModel Video
+        {
+            get
+            {
+                return video;
+            }
+
+            set
+            {
+                video = value;
             }
         }
 
@@ -87,5 +101,7 @@ namespace get_rekt.Models
                 ip = value;
             }
         }
+
+       
     }
 }

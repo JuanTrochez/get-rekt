@@ -23,12 +23,27 @@ namespace get_rekt.Dao.video
         public List<VideoModel> getAllVideoByPublication(int published)
         {
             Context contextVideo = new Context();
+            List<VideoModel> listVideos = new List<VideoModel>();
 
-            List<VideoModel> videos = contextVideo.Videos
-                .Where(v => v.Published == published)
-                .ToList();
+            var videos = contextVideo.Videos
+                .GroupJoin(
+                    contextVideo.Pictures,
+                    video => video.PictureId,
+                    picture => picture.Id,
+                    (video, picture) => new { videoResult = video, pictureObject = picture}
+                )
+                .Where(v => v.videoResult.Published == published);
 
-            return videos;
+
+            int i = 0;
+            foreach (var video in videos)
+            {
+                video.videoResult.Picture = (PictureModel) video.pictureObject.ToArray().GetValue(i);
+                listVideos.Add(video.videoResult);
+                i++;
+            }
+
+            return listVideos;
         }
     }
 }

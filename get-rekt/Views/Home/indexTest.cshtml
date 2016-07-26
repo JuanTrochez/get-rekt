@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.User_id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CategoryId)
@@ -50,19 +50,19 @@
             @Html.DisplayFor(modelItem => item.Published)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VideoLink)
+            <iframe width="560" height="315" src="@Html.DisplayFor(modelItem => item.VideoLink)" frameborder="0" allowfullscreen></iframe>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.User.Username)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
+            @Html.DisplayFor(modelItem => item.Category.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PictureId)
+            <img src="@Html.DisplayFor(modelItem => item.Picture.Link)" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

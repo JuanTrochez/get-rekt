@@ -17,12 +17,15 @@ namespace get_rekt.Models
         private int published;
         private String videoLink;
         private DateTime date;
-        private UserModel userId;
-        private CategoryModel categoryId;
-        private PictureModel pictureId;
+        private int user_id;
+        private UserModel user;
+        private int category_id;
+        private CategoryModel category;
+        private PictureModel picture;
+        private int picture_id;
 
         [Key]
-        [Column("id")]
+        [Column("Id")]
         public int Id
         {
             get
@@ -106,46 +109,89 @@ namespace get_rekt.Models
             }
         }
 
-        [ForeignKey("user_id")]
-        public UserModel UserId
+        [ForeignKey("User")]
+        [Column("user_id")]
+        public int User_id
         {
             get
             {
-                return userId;
+                return user_id;
             }
 
             set
             {
-                userId = value;
+                user_id = value;
             }
         }
 
-        [ForeignKey("category_id")]
-        public CategoryModel CategoryId
+        public UserModel User
         {
             get
             {
-                return categoryId;
+                return user;
             }
 
             set
             {
-                categoryId = value;
+                user = value;
+            }
+        }
+
+        [ForeignKey("Category")]
+        [Column("category_id")]
+        public int CategoryId
+        {
+            get
+            {
+                return category_id;
+            }
+
+            set
+            {
+                category_id = value;
             }
         }
         
-        [ForeignKey("picture_id")]
-        public PictureModel PictureId
+        public CategoryModel Category
         {
             get
             {
-                return pictureId;
+                return category;
             }
 
             set
             {
-                pictureId = value;
+                category = value;
             }
         }
+        
+        public PictureModel Picture
+        {
+            get
+            {
+                return picture;
+            }
+
+            set
+            {
+                picture = value;
+            }
+        }
+
+        [ForeignKey("Picture")]
+        [Column("picture_id")]
+        public int PictureId
+        {
+            get
+            {
+                return picture_id;
+            }
+
+            set
+            {
+                picture_id = value;
+            }
+        }
+        
     }
 }
