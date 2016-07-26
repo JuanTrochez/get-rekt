@@ -32,14 +32,20 @@ namespace get_rekt.Dao.video
                     picture => picture.Id,
                     (video, picture) => new { videoResult = video, pictureObject = picture}
                 )
-                .Where(v => v.videoResult.Published == published);
+                .Join(
+                     contextVideo.Categories,
+                     video => video.videoResult.CategoryId,
+                     category => category.Id,
+                     (video, category) => new { videoResult = video, category = category }
+                     )
+                .Where(v => v.videoResult.videoResult.Published == published);
 
 
             int i = 0;
             foreach (var video in videos)
             {
-                video.videoResult.Picture = (PictureModel) video.pictureObject;
-                listVideos.Add(video.videoResult);
+                VideoModel v = video.videoResult.videoResult;
+                listVideos.Add(v);
                 i++;
             }
 
