@@ -12,7 +12,7 @@ namespace get_rekt.Models
     public class RektModel
     {
         private int id;
-        private int videoId;
+        private VideoModel videoId;
         private bool rekt;
         private bool notRekt;
         private String ip;
@@ -32,8 +32,8 @@ namespace get_rekt.Models
             }
         }
 
-        [Column("video_id")]
-        public int VideoId
+        [ForeignKey("video_id")]
+        public VideoModel VideoId
         {
             get
             {

@@ -17,8 +17,8 @@ namespace get_rekt.Models
         private int published;
         private String videoLink;
         private DateTime date;
-        private int userId;
-        private int categoryId;
+        private UserModel userId;
+        private CategoryModel categoryId;
         private PictureModel pictureId;
 
         [Key]
@@ -106,8 +106,8 @@ namespace get_rekt.Models
             }
         }
 
-        [Column("user_id")]
-        public int UserId
+        [ForeignKey("user_id")]
+        public UserModel UserId
         {
             get
             {
@@ -120,8 +120,8 @@ namespace get_rekt.Models
             }
         }
 
-        [Column("category_id")]
-        public int CategoryId
+        [ForeignKey("category_id")]
+        public CategoryModel CategoryId
         {
             get
             {
