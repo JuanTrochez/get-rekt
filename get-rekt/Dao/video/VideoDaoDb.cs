@@ -26,7 +26,7 @@ namespace get_rekt.Dao.video
             List<VideoModel> listVideos = new List<VideoModel>();
 
             var videos = contextVideo.Videos
-                .GroupJoin(
+                .Join(
                     contextVideo.Pictures,
                     video => video.PictureId,
                     picture => picture.Id,
@@ -38,7 +38,7 @@ namespace get_rekt.Dao.video
             int i = 0;
             foreach (var video in videos)
             {
-                video.videoResult.Picture = (PictureModel) video.pictureObject.ToArray().GetValue(i);
+                video.videoResult.Picture = (PictureModel) video.pictureObject;
                 listVideos.Add(video.videoResult);
                 i++;
             }
