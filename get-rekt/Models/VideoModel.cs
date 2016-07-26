@@ -19,7 +19,7 @@ namespace get_rekt.Models
         private DateTime date;
         private int userId;
         private int categoryId;
-        private int pictureId;
+        private PictureModel pictureId;
 
         [Key]
         [Column("id")]
@@ -133,9 +133,9 @@ namespace get_rekt.Models
                 categoryId = value;
             }
         }
-
-        [Column("picture_id")]
-        public int PictureId
+        
+        [ForeignKey("picture_id")]
+        public PictureModel PictureId
         {
             get
             {
