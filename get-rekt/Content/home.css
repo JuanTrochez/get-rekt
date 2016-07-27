@@ -1,8 +1,24 @@
-﻿.video-title {
+﻿.video-title .title {
+	background: url("image/background/back-title.png");
+}
+.video-title .subtitle {
+	background: url("image/background/back-subtitle.png");
+}
+.video-title .subtitle, .video-title .title {
+	display: inline-block;
+	padding: 0 30px 0 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.video-title {
 	font-weight: 800;
     font-size: 20px;
-    padding: 0 15px;
     text-transform: uppercase;
+}
+
+.list-video .video-teaser {
+	margin-bottom: 15px;
 }
 
 .list-video .video-information {
@@ -39,12 +55,17 @@
 
 .list-video .img-container {
 	position: relative;
+	display: inline-block;
+    max-width: 31%;
+}
+.list-video .first .img-container {
+	display: block;
+	max-width: 100%;
 }
 
 .list-video .img-teaser {
     width: 100%;
     height: 100%;
-    max-width: 31%;
     min-width: 200px;
     display: inline-block;
     vertical-align: middle;
@@ -65,4 +86,17 @@
     width: 28%;
     font-size: 15px;
     text-align: center; 
+}
+.list-video .detail .category {
+	font-weight: bold;
+}
+.list-video .detail .rekt {
+	background: url("image/common/rekt.png");
+    background-repeat: no-repeat;
+    background-position: 93%;
+    font-weight: 800;
+    font-size: 50px;
+}
+.list-video .first .detail .rekt {
+    background-position: 78%;	
 }

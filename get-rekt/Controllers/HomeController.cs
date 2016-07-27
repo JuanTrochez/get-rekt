@@ -16,7 +16,7 @@ namespace get_rekt.Controllers
 
             IVideoDao dao = FactoryDao.GetVideoDao();
             List<VideoModel> Model = dao.getAllVideoByPublication(1);
-            return View("indexTest", Model);
+            return View(Model);
         }
 
         public ActionResult About()

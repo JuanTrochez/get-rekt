@@ -1,12 +1,10 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.body-content {  
+    padding: 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -26,7 +24,10 @@ textarea {
 
 /*//////////// COLORS */
 .white-color {
-	color: white;
+	color: white !important;
+}
+.back-white {
+	background-color: white !important;
 }
 
 .back-w {

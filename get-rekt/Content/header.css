@@ -14,6 +14,8 @@
 
 
 .navbar-right li .participe-link {
-	color: white;
     border-radius: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 17px;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Get Rekt</title>
     @Styles.Render("~/Content/app.css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span class="navbar-brand site-title color-w"><span class="color-blue">Get</span> Rekt</span>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="/Content/image/common/logo-white.png" alt="logo" />
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -27,15 +27,21 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        @Html.ActionLink("Participe !", "Index", "Contribute", new { area = "" }, new { @class = "participe-link back-y" })
+                        @Html.ActionLink("Participe !", "Index", "Contribute", new { area = "" }, new { @class = "participe-link back-y white-color" })
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content back-w">
-        @RenderBody()
-        <hr />
+    <div class="container body-content back-white">
+        <div class="main-content col-md-9">
+            @RenderBody()
+        </div>
+        <aside class="categorie-links col-md-3">
+            <div class="video-title back-black white-color">
+                <span class="title">Categories</span>
+            </div>
+        </aside>
     </div>
 
     <footer class="back-black white-color">
@@ -44,6 +50,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/Scripts/app.js")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>
