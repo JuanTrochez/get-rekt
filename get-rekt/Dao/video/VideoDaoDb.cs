@@ -38,18 +38,39 @@ namespace get_rekt.Dao.video
                      category => category.Id,
                      (video, category) => new { videoResult = video, category = category }
                      )
-                .Where(v => v.videoResult.videoResult.Published == published);
+                .Join(
+                    contextVideo.Users,
+                    video => video.videoResult.videoResult.User_id,
+                    user => user.Id,
+                    (video, user) => new { videoResult = video, user = user }
+                    )
+                .Where(v => v.videoResult.videoResult.videoResult.Published == published);
 
 
             int i = 0;
             foreach (var video in videos)
             {
-                VideoModel v = video.videoResult.videoResult;
+                VideoModel v = video.videoResult.videoResult.videoResult;
                 listVideos.Add(v);
                 i++;
             }
 
             return listVideos;
         }
+
+        public void insertVideo(VideoModel video)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Videos.Add(video);
+            contextVideo.SaveChanges();
+        }
+
+        public void updateVideo(VideoModel video)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Videos.Attach(video);
+            contextVideo.SaveChanges();
+        }
+
     }
 }

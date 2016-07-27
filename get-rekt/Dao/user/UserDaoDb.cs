@@ -20,5 +20,20 @@ namespace get_rekt.Dao.user
 
             return user;
         }
+
+        public int insertUser(UserModel user)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Users.Add(user);
+            contextVideo.SaveChanges();
+            return user.Id;
+        }
+
+        public void updateUser(UserModel user)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Users.Attach(user);
+            contextVideo.SaveChanges();
+        }
     }
 }

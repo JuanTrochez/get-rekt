@@ -19,5 +19,14 @@ namespace get_rekt.Dao.category
 
             return category;
         }
+
+        public List<CategoryModel> getAllCategories()
+        {
+            Context contextCategory = new Context();
+
+            List<CategoryModel> categories = contextCategory.Categories.ToList();
+
+            return categories;
+        }
     }
 }

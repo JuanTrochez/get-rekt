@@ -14,7 +14,7 @@ namespace get_rekt.Dao.Rekt
         {
             Context contextRekt = new Context();
 
-            //RektModel rekt = contextRekt.Rekts.Where(v => v.VideoId == videoId).FirstOrDefault();
+            RektModel rekt = contextRekt.Rekts.Where(v => v.Video_id == videoId).FirstOrDefault();
             throw new NotImplementedException();
         }
     }
