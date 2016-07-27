@@ -15,7 +15,7 @@ namespace get_rekt.Models
         private String username;
         private String password;
         private String email;
-        private int role;
+        private Byte role;
 
         [Key]
         [Column("id")]
@@ -61,7 +61,7 @@ namespace get_rekt.Models
         }
 
         [Column("role")]
-        public int Role
+        public Byte Role
         {
             get
             {
