@@ -1,0 +1,19 @@
+﻿.navbar-header span.navbar-brand.site-title {
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+
+.navbar-right li .participe-link {
+	color: white;
+    border-radius: 10px;
+}

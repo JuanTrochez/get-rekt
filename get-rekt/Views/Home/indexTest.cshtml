@@ -4,72 +4,35 @@
     ViewBag.Title = "index_test";
 }
 
-<h2>index_test</h2>
+<div class="col-md-9">
+    <div class="video-title back-black white-color">
+        Dernières videos
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Published)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VideoLink)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PictureId)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Published)
-        </td>
-        <td>
-            <iframe width="560" height="315" src="@Html.DisplayFor(modelItem => item.VideoLink)" frameborder="0" allowfullscreen></iframe>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
-        </td>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.Picture.Link)" />
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="list-video col-md-9">
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {        
+        <div class="video-teaser @if (i == 0) { @Html.Raw("first"); }">
+            <div class="video-title back-black white-color">
+                @Html.DisplayFor(modelItem => item.Title)
+            </div>
+            <div class="video-information back-g-light">
+                <div class="img-container">
+                    <img src="@Html.DisplayFor(modelItem => item.Picture.Link)" class="img-teaser" />
+                    <div class="first-title color-w">@Html.DisplayFor(modelItem => item.Title)</div>
+                </div>
+                <div class="description back-g color-w">
+                    @Html.DisplayFor(modelItem => item.Description)    
+                </div>
+                <div class="detail">
+                    <div>@Html.DisplayFor(modelItem => item.Category.Name)</div>
+                    <div>Ajouté le @Html.DisplayFor(modelItem => item.Date)</div>
+                    <div>75 rekt</div>
+                </div>
+            </div>
+        </div>
+        i++;
+    }
+</div>
