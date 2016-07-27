@@ -33,7 +33,19 @@ namespace get_rekt
                 url: "video/liste-attente",
                 defaults: new { controller = "Video", action = "WaitList" }
             );
-            
+
+            routes.MapRoute(
+                name: "AddVideo",
+                url: "video/ajouter-video",
+                defaults: new { controller = "Video", action = "AddVideo" }
+            );
+
+            routes.MapRoute(
+                name: "SubmitVideo",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Video", action = "AddVideo" }
+            );
+
             //Category 
             routes.MapRoute(
                 name: "Category",

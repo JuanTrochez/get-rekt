@@ -57,5 +57,20 @@ namespace get_rekt.Dao.video
 
             return listVideos;
         }
+
+        public void insertVideo(VideoModel video)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Videos.Add(video);
+            contextVideo.SaveChanges();
+        }
+
+        public void updateVideo(VideoModel video)
+        {
+            Context contextVideo = new Context();
+            contextVideo.Videos.Attach(video);
+            contextVideo.SaveChanges();
+        }
+
     }
 }
