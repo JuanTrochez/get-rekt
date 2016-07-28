@@ -32,5 +32,17 @@ namespace get_rekt.Dao.Rekt
             contextRekt.Entry(rekt).State = EntityState.Modified;
             contextRekt.SaveChanges();
         }
+
+        public bool checkRektByIpAndVideoId(String ip, int Id)
+        {
+            Context contextRekt = new Context();
+            RektModel rekt = contextRekt.Rekts.Where(v => v.Video_id == Id && v.Ip == ip).FirstOrDefault();
+
+            if(rekt == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
