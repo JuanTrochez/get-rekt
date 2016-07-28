@@ -46,6 +46,7 @@ namespace get_rekt.Controllers
             }
             ViewBag.videosCategories = videos;
             ViewBag.categoryName = new CategoryDaoDb().getCategory(id).Name;
+
             return View();
         }
 
