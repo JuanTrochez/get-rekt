@@ -23,6 +23,7 @@
 
 .list-video .video-information {
 	font-size: 0;
+	overflow: hidden;
 }
 
 .list-video .first .img-teaser {

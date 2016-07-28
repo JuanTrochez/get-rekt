@@ -1,8 +1,25 @@
 ﻿@model get_rekt.Models.VideoModel
 
 @{
-    ViewBag.Title = "Watch";
+    ViewBag.Title = ViewBag.video.Title;
 }
 
-<h2>Watch</h2>
-<iframe width="560" height="315" src="@ViewBag.video.VideoLink" frameborder="0" allowfullscreen></iframe>
+<div class="video-title back-black white-color">
+    <div class="title">@ViewBag.video.Title</div>
+</div>
+<div>
+    <iframe height="470" src="@ViewBag.video.VideoLink" frameborder="0" allowfullscreen></iframe>
+    <div class="video-information back-g-light">
+        <div class="description back-g color-w col-md-8">
+            @ViewBag.video.Description
+        </div>
+        <div class="detail col-md-4">
+            <div class="category">@ViewBag.video.Category</div>
+            <div>Ajouté le @ViewBag.video.Date</div>
+            <div class="rekt">75</div>            
+            <div class="vote-rect">
+                <button data-rekt="1">REKTED</button>
+            </div>
+        </div>
+    </div>
+</div>
