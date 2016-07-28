@@ -1,3 +1,7 @@
 ﻿iframe {
     width: 100%;
 }
+
+#publish-btn {
+    font-size: 15px;
+}

@@ -1,4 +1,5 @@
 ﻿using get_rekt.Dao.Rekt;
+using get_rekt.Dao.video;
 using get_rekt.Models;
 using Newtonsoft.Json;
 using System;
@@ -42,7 +43,25 @@ namespace get_rekt.Controllers
 
             return Json(new { valid = "true", data = rekt }, JsonRequestBehavior.AllowGet);
         }
-        
+
+        public ActionResult PublishVideo(int videoId)
+        {
+
+            VideoModel video = new VideoDaoDb().getVideo(videoId);
+
+            video.Published = (video.Published == 0) ? 1 : 0;
+            new VideoDaoDb().updateVideo(video);
+
+            return Json(new { valid = "true", data = video }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DeleteVideo(int videoId)
+        {
+            new VideoDaoDb();
+
+            return Json(new { valid = "true" }, JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }

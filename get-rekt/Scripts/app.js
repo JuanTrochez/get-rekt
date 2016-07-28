@@ -8,5 +8,15 @@ $(function() {
 			}
 		});
 	});
+
+	$('#publish-btn').click(function() {
+		var videoId = $(this).data('publish');
+		$.ajax({
+			url: "http://" + window.location.host + "/rekt/" + videoId, 
+			success: function(result){
+				console.log(result);
+			}
+		});
+	});
 		
 });

@@ -21,6 +21,20 @@ namespace get_rekt
                 constraints: new { videoId = @"\d+" }
             );
 
+            routes.MapRoute(
+                name: "PublishVideo",
+                url: "publish/{videoId}",
+                defaults: new { controller = "Ajax", action = "PublishVideo", videoId = UrlParameter.Optional },
+                constraints: new { videoId = @"\d+" }
+            );
+
+            routes.MapRoute(
+                name: "DeleteVideo",
+                url: "delete/{videoId}",
+                defaults: new { controller = "Ajax", action = "DeleteVideo", videoId = UrlParameter.Optional },
+                constraints: new { videoId = @"\d+" }
+            );
+
             //Home
             routes.MapRoute(
                 name: "Default",
