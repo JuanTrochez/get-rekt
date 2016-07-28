@@ -17,7 +17,12 @@ namespace get_rekt.Controllers
         // GET: Video
         public ActionResult Watch(int id)
         {
-
+            VideoModel video = new VideoDaoDb().getVideo(id);
+            if( video == null)
+            {
+                return Redirect("/");
+            }
+            ViewBag.video = video;
             return View();
         }
 

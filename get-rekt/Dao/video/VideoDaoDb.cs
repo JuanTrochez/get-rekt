@@ -17,6 +17,7 @@ namespace get_rekt.Dao.video
 
             VideoModel video = contextVideo.Videos.Where(v => v.Id == id).FirstOrDefault();
 
+
             return video;
         }
 
@@ -72,6 +73,5 @@ namespace get_rekt.Dao.video
             contextVideo.Entry(video).State = EntityState.Modified;
             contextVideo.SaveChanges();
         }
-
     }
 }
