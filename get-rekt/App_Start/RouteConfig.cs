@@ -29,6 +29,13 @@ namespace get_rekt
             );
 
             routes.MapRoute(
+                name: "CategoryVideo",
+                url: "video/category/{id}",
+                defaults: new { controller = "Video", action = "CategoryVideo", id = UrlParameter.Optional },
+                constraints: new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
                 name: "CheckVideo",
                 url: "video/liste-attente",
                 defaults: new { controller = "Video", action = "WaitList" }
