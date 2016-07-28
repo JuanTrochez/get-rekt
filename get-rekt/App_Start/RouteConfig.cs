@@ -13,6 +13,14 @@ namespace get_rekt
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Ajax
+            routes.MapRoute(
+                name: "RektVote",
+                url: "rekt/{videoId}",
+                defaults: new { controller = "Ajax", action = "RektVote", videoId = UrlParameter.Optional },
+                constraints: new { videoId = @"\d+" }
+            );
+
             //Home
             routes.MapRoute(
                 name: "Default",
