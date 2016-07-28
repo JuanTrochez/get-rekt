@@ -12,7 +12,17 @@ $(function() {
 	$('#publish-btn').click(function() {
 		var videoId = $(this).data('publish');
 		$.ajax({
-			url: "http://" + window.location.host + "/rekt/" + videoId, 
+			url: "http://" + window.location.host + "/publish/" + videoId, 
+			success: function(result){
+				console.log(result);
+			}
+		});
+	});
+
+	$('#delete-btn').click(function() {
+		var videoId = $(this).data('delete');
+		$.ajax({
+			url: "http://" + window.location.host + "/delete/" + videoId, 
 			success: function(result){
 				console.log(result);
 			}

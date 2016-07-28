@@ -57,7 +57,7 @@ namespace get_rekt.Controllers
 
         public ActionResult DeleteVideo(int videoId)
         {
-            new VideoDaoDb();
+            new VideoDaoDb().deleteVideoById(videoId);
 
             return Json(new { valid = "true" }, JsonRequestBehavior.AllowGet);
         }
