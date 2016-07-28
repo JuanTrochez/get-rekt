@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using get_rekt.Dao.Rekt;
+using get_rekt.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +23,24 @@ namespace get_rekt.Controllers
         {
             string ipaddress = new WebClient().DownloadString(@"http://icanhazip.com").Trim();
 
-            return Json(new { valid = "true", ip = ipaddress }, JsonRequestBehavior.AllowGet);
+            RektModel rekt = new RektDaoDb().getRektByIpAndVideoId(ipaddress, videoId);
+
+            if (rekt == null)
+            {
+                rekt = new RektModel();
+                rekt.Ip = ipaddress;
+                rekt.Rekt = 1;
+                rekt.Video_id = videoId;
+                new RektDaoDb().insertRekt(rekt);
+            }
+            else
+            {
+                rekt.Rekt = (rekt.Rekt == 0) ? (byte) 1 : (byte) 0;
+
+                new RektDaoDb().updateRekt(rekt);
+            }
+
+            return Json(new { valid = "true", data = rekt }, JsonRequestBehavior.AllowGet);
         }
         
 

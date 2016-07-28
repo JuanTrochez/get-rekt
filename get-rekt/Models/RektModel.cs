@@ -14,8 +14,8 @@ namespace get_rekt.Models
         private int id;
         private int video_id;
         private VideoModel video;
-        private bool rekt;
-        private bool notRekt;
+        private byte rekt;
+        private byte notRekt;
         private String ip;
 
         [Key]
@@ -61,7 +61,7 @@ namespace get_rekt.Models
         }
 
         [Column("rekt")]
-        public bool Rekt
+        public byte Rekt
         {
             get
             {
@@ -75,7 +75,7 @@ namespace get_rekt.Models
         }
 
         [Column("not_rekt")]
-        public bool NotRekt
+        public byte NotRekt
         {
             get
             {
