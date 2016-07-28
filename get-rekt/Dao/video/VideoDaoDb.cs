@@ -21,6 +21,13 @@ namespace get_rekt.Dao.video
             return video;
         }
 
+        public List<VideoModel> getAllVideoByCategories(int category)
+        {
+            Context contextVideo = new Context();
+            List<VideoModel> videos = contextVideo.Videos.Where(p => p.CategoryId == category).ToList();
+            return videos;
+        }
+
         public List<VideoModel> getAllVideoByPublication(int published)
         {
             Context contextVideo = new Context();

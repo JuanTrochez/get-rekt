@@ -37,6 +37,18 @@ namespace get_rekt.Controllers
             return View();
         }
 
+        public ActionResult CategoryVideo(int id)
+        {
+            List<VideoModel> videos = new VideoDaoDb().getAllVideoByCategories(id);
+            if (videos == null)
+            {
+                return Redirect("/");
+            }
+            ViewBag.videosCategories = videos;
+            ViewBag.categoryName = new CategoryDaoDb().getCategory(id).Name;
+            return View();
+        }
+
         public ActionResult AddVideo()
         {
             List<CategoryModel> categories = CategoryDaoDb.getAllCategories();
