@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using get_rekt.Models;
-
+using System.Data.Entity;
 
 namespace get_rekt.Dao.video
 {
@@ -69,6 +69,7 @@ namespace get_rekt.Dao.video
         {
             Context contextVideo = new Context();
             contextVideo.Videos.Attach(video);
+            contextVideo.Entry(video).State = EntityState.Modified;
             contextVideo.SaveChanges();
         }
 
