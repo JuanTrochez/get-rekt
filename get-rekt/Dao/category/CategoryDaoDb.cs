@@ -20,7 +20,7 @@ namespace get_rekt.Dao.category
             return category;
         }
 
-        public List<CategoryModel> getAllCategories()
+        public static List<CategoryModel> getAllCategories()
         {
             Context contextCategory = new Context();
 

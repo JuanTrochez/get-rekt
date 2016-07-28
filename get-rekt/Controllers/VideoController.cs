@@ -27,7 +27,7 @@ namespace get_rekt.Controllers
 
         public ActionResult AddVideo()
         {
-            List<CategoryModel> categories = new CategoryDaoDb().getAllCategories();
+            List<CategoryModel> categories = CategoryDaoDb.getAllCategories();
             ViewBag.categories = categories;
             return View();
         }
