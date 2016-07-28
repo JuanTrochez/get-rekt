@@ -1,4 +1,5 @@
 ﻿@model get_rekt.Models.VideoModel
+@using get_rekt.Dao.Rekt;
 
 @{
     ViewBag.Title = ViewBag.video.Title;
@@ -10,15 +11,19 @@
 <div>
     <iframe height="470" src="@ViewBag.video.VideoLink" frameborder="0" allowfullscreen></iframe>
     <div class="video-information back-g-light">
-        <div class="description back-g color-w col-md-8">
+        <div class="description back-g color-w col-md-7">
             @ViewBag.video.Description
         </div>
         <div class="detail col-md-4">
             <div class="category">@ViewBag.video.Category</div>
             <div>Ajouté le @ViewBag.video.Date</div>
-            <div class="rekt">75</div>            
+            <div class="rekt">@RektDaoDb.getCountRektByVideoId(ViewBag.video.Id)</div>            
             <div class="vote-rect">
-                <button id="rekt-btn" data-rekt="@ViewBag.video.CategoryId">REKTED</button>
+                <button id="rekt-btn" class="btn btn-secondary" data-rekt="@ViewBag.video.Id">REKTED</button>
+            </div>
+
+            <div class="delete-btn">
+                <button id="delete-btn" class="btn btn-danger" data-delete="@ViewBag.video.Id">Delete</button>
             </div>
         </div>
     </div>

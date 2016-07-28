@@ -71,7 +71,7 @@
     display: inline-block;
     vertical-align: middle;
 }
-.list-video .description {
+.description {
 	display: inline-block;
     vertical-align: middle;    
     width: 40%;
@@ -81,17 +81,17 @@
     line-height: 17px;
 }
 
-.list-video .detail {
+.detail {
 	display: inline-block;
 	vertical-align: middle;
     width: 28%;
     font-size: 15px;
     text-align: center; 
 }
-.list-video .detail .category {
+.detail .category {
 	font-weight: bold;
 }
-.list-video .detail .rekt {
+.detail .rekt {
 	background: url("image/common/rekt.png");
     background-repeat: no-repeat;
     background-position: 93%;

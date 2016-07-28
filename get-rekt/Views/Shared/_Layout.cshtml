@@ -1,6 +1,7 @@
 ﻿@using get_rekt.Dao.category;
 @using get_rekt.Models;
 
+
 @{
     ViewBag.Title = "Accueil";
     List<CategoryModel> Categories = CategoryDaoDb.getAllCategories();
@@ -26,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand site-title color-w"><span class="color-blue">Get</span> Rekt</span>
+                <span class="navbar-brand site-title color-w"><a href="/"><span class="color-blue">Get</span> Rekt</a></span>
                 <img src="/Content/image/common/logo-white.png" alt="logo" />
             </div>
             <div class="navbar-collapse collapse">
@@ -35,7 +36,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        @Html.ActionLink("Participe !", "Index", "Contribute", new { area = "" }, new { @class = "participe-link back-y white-color" })
+                        @Html.ActionLink("En attente", "WaitList", "Video", new { area = "" }, new { @class = "participe-link back-blue white-color" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Participe !", "AddVideo", "Video", new { area = "" }, new { @class = "participe-link back-y white-color" })
                     </li>
                 </ul>
             </div>
@@ -52,7 +56,7 @@
 
             @foreach (var item in Categories)
             {
-                <a href="#" class="category back-g-light color-black">@item.Name</a>
+                <a href="/video/category/@item.Id" class="category back-g-light color-black">@item.Name</a>
             }
         </aside>
     </div>

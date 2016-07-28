@@ -1,4 +1,6 @@
 ﻿@model get_rekt.Models.VideoModel
+@using get_rekt.Dao.Rekt
+
 
 @{
     ViewBag.Title = "CategoryVideo";
@@ -6,7 +8,7 @@
 
 <div>
     <div class="video-title back-black white-color">
-        <div class="title">Liste d'attente</div>
+        <div class="title">Categorie @ViewBag.categoryName</div>
     </div>
 </div>
 
@@ -14,15 +16,16 @@
     @{int i = 0;}
     @foreach (var item in ViewBag.videosCategories as List <get_rekt.Models.VideoModel>)
         {
+        int rekt = RektDaoDb.getCountRektByVideoId(item.Id);
         <div class="video-teaser first">
             <div class="video-title back-black white-color">
                 <div class="subtitle">
-                    @Html.DisplayFor(modelItem => item.Title)
+                    <a href="/video/@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
                 </div>
             </div>
             <div class="video-information back-g-light">
                 <div class="img-container" style="height:300px; background:url('/pictures/@item.Picture.Link'); background-size:cover; background-position:center;">
-                    <div class="first-title color-w">@Html.DisplayFor(modelItem => item.Title)</div>
+                    <div class="first-title color-w"><a href="/video/@item.Id">@Html.DisplayFor(modelItem => item.Title)</a></div>
                 </div>
                 <div class="description back-g color-w">
                     @Html.DisplayFor(modelItem => item.Description)
@@ -30,7 +33,7 @@
                 <div class="detail">
                     <div class="category">@Html.DisplayFor(modelItem => item.Category.Name)</div>
                     <div>Ajouté le @Html.DisplayFor(modelItem => item.Date)</div>
-                    <div class="rekt">75</div>
+                    <div class="rekt">@rekt</div>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ namespace get_rekt.Controllers
                 new RektDaoDb().updateRekt(rekt);
             }
 
-            return Json(new { valid = "true", data = rekt }, JsonRequestBehavior.AllowGet);
+            return Json(new { valid = "true", response = "rekt-vote", data = rekt }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult PublishVideo(int videoId)
@@ -52,14 +52,15 @@ namespace get_rekt.Controllers
             video.Published = (video.Published == 0) ? 1 : 0;
             new VideoDaoDb().updateVideo(video);
 
-            return Json(new { valid = "true", data = video }, JsonRequestBehavior.AllowGet);
+            return Json(new { valid = "true", response = "publish", data = video }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult DeleteVideo(int videoId)
         {
+            new RektDaoDb().deleteRektsByVideoId(videoId);
             new VideoDaoDb().deleteVideoById(videoId);
 
-            return Json(new { valid = "true" }, JsonRequestBehavior.AllowGet);
+            return Json(new { valid = "true", response = "delete" }, JsonRequestBehavior.AllowGet);
         }
 
 

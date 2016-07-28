@@ -41,7 +41,7 @@ namespace get_rekt.Dao.Rekt
             return rekt;
         }
 
-        public int getCountRektByVideoId(int videoId)
+        public static int getCountRektByVideoId(int videoId)
         {
             Context contextRekt = new Context();
             int rekts = contextRekt.Rekts.Where(v => v.Video_id == videoId && v.Rekt == 1).Count();
