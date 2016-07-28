@@ -110,5 +110,14 @@ namespace get_rekt.Dao.video
             contextVideo.Entry(video).State = EntityState.Modified;
             contextVideo.SaveChanges();
         }
+
+        public void deleteVideoById(int id)
+        {
+            Context contextVideo = new Context();
+            VideoModel video = getVideo(id);
+            contextVideo.Videos.Attach(video);
+            contextVideo.Videos.Remove(video);
+            contextVideo.SaveChanges();
+        }
     }
 }
