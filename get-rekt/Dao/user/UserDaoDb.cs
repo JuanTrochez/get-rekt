@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 using get_rekt.Models;
+using System.Data.Entity;
 
 namespace get_rekt.Dao.user
 {
@@ -29,11 +30,13 @@ namespace get_rekt.Dao.user
             return user.Id;
         }
 
-        public void updateUser(UserModel user)
+        public int updateUser(UserModel user)
         {
             Context contextVideo = new Context();
             contextVideo.Users.Attach(user);
+            contextVideo.Entry(user).State = EntityState.Modified;
             contextVideo.SaveChanges();
+            return user.Id;
         }
     }
 }

@@ -36,7 +36,7 @@ namespace get_rekt
 
             routes.MapRoute(
                 name: "AddVideo",
-                url: "video/ajouter-video",
+                url: "video/ajouter",
                 defaults: new { controller = "Video", action = "AddVideo" }
             );
 
