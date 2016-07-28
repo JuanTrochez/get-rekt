@@ -29,7 +29,7 @@ namespace get_rekt.Controllers
         public ActionResult WaitList()
         {
             List<VideoModel> videos = new VideoDaoDb().getAllVideoByPublication(0);
-            if( videos == null)
+          if( videos == null)
             {
                 return Redirect("/");
             }
