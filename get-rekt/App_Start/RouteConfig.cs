@@ -69,12 +69,7 @@ namespace get_rekt
                 constraints: new { categoryId = @"\d+" }
             );
 
-            //Contribute
-            routes.MapRoute(
-                name: "Contribute",
-                url: "participe",
-                defaults: new { controller = "Contribute", action = "Index" }
-            );
+            
         }
     }
 }
