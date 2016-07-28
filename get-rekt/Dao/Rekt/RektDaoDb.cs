@@ -47,5 +47,19 @@ namespace get_rekt.Dao.Rekt
             int rekts = contextRekt.Rekts.Where(v => v.Video_id == videoId && v.Rekt == 1).Count();
             return rekts;
         }
+
+        public void deleteRektsByVideoId(int videoId)
+        {
+            Context contextRekt = new Context();
+            List<RektModel> rekts = contextRekt.Rekts.Where(v => v.Video_id == videoId && v.Rekt == 1).ToList();
+
+            foreach (var rekt in rekts)
+            {
+                RektModel rektmodel = rekt;
+                contextRekt.Rekts.Attach(rektmodel);
+                contextRekt.Rekts.Remove(rektmodel);
+                contextRekt.SaveChanges();
+            }
+        }
     }
 }
