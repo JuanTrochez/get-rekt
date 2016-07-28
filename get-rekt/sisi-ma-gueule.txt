@@ -1,0 +1,21 @@
+Yo !
+
+Bon normalement l'ajax fonctionne correctemment ! 
+J'ai aussi essayé de regarder pour disqus mais j'ai vite abandonné pour me concentrer sur les trucs les plus importants
+Le petit hic c'est que j'ai du faire au plus vite et y a des trucs qui sont mis en page vite fais
+genre le message de confirmation après avoir supprimé une vidéo ou meme les boutons mais ça passe a peu près
+
+en parlant de la suppression voici la requete que tu dois taper dans la zone de texte :
+ALTER TABLE nom_table NOCHECK CONSTRAINT all
+pour accceder a la zone de texte il faut faire clic droit sur la base de données et cliquer sur "new query"
+repete le pour toutes les tables (on sait jamais)
+
+y a certains petits elements en css qui manque, pas grand chose (des espacements ou plus ?)
+le responsive est un peu foireux dans certains endroits j'ai l'impression donc evite de trop le montrer (a verifier)
+
+oublie pas d'essayer de tout tester pour que tu saches quoi montrer a la presentation :D
+je vais essayer d'y etre mais je garanti rien (je dois chasser des pokémons)
+je t'envoi un message pour te prévenir si je viens
+dans le cas contraire envoi moi un msg pour savoir comment ça s'est passé ;)
+
+Good luck nigga !
